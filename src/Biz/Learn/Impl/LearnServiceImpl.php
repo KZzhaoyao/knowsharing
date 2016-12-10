@@ -14,7 +14,7 @@ class LearnServiceImpl extends KernelAwareBaseService implements LearnService
 
     public function finishKnowledgeLearn($id, $userId)
     {
-        $currentUser = $this->getCurrentUser();
+        $currentUser = $this->biz->getCurrentUser();
 
         $fields = array(
             'userId' => $userId,

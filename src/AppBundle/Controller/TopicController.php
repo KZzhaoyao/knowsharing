@@ -32,7 +32,6 @@ class TopicController extends BaseController
             $paginator->getPerPageCount()
         );
         $topics = $this->getFollowService()->hasFollowTopics($topics,$currentUser['id']);
-        
         return $this->render('AppBundle:Topic:index.html.twig', array(
             'topics' => $topics,
             'paginator' => $paginator,

@@ -39,4 +39,16 @@
       </li>
     </ul>
   </li>
+  {% if app.user %}
+  <li>
+    <ul class="list-group">
+      <li class="list-group-heading" style="padding: 10px 15px;"> <i class="fa fa-book">&nbsp;&nbsp;
+        我的信息</i> 
+      </li>
+      <li class="list-group-item">
+        <span style="padding-left:21px;"><a href="{{path('user_page', {userId:app.user.id})}}">个人信息</a></span>
+      </li>
+    </ul>
+  </li>
+  {% endif %}
 </ul>

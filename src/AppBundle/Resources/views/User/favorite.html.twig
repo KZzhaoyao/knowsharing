@@ -5,9 +5,9 @@
         <div class="content-block new-content">
             {% block navTabs %}
                 <ul class="nav nav-tabs">
-                    <li role="newknowledge"><a href="{{path('user_page', {userId:user.id})}}">他的分享</a></li>
-                    <li role="myconcern"><a href="{{path('user_follows', {userId:user.id ,type:'topic'})}}">他的关注</a></li>
-                    <li role="topic" class="active"><a href="{{path('user_favorites', {userId:user.id})}}">他的收藏</a></li>
+                    <li role="newknowledge"><a href="{{path('user_page', {userId:user.id})}}">用户分享</a></li>
+                    <li role="myconcern"><a href="{{path('user_follows', {userId:user.id ,type:'topic'})}}">用户关注</a></li>
+                    <li role="topic" class="active"><a href="{{path('user_favorites', {userId:user.id})}}">用户收藏</a></li>
                 </ul>
                 <br>
             {% endblock %}

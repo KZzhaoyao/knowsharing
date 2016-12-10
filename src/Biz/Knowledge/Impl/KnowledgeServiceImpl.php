@@ -119,7 +119,12 @@ class KnowledgeServiceImpl extends KernelAwareBaseService implements KnowledgeSe
 
     public function deleteKnowledge($id)
     {
-        return $this->getKnowledgeDao()->delete($id);
+        $knowledge = $this->getKnowledgeDao()->delete($id);
+        $toDo = $this->getToDoListDao()->get($id);
+        if (!empty($toDo)) {
+            $this->getToDoListDao()->delete($toDo['id']);
+        }
+        return $knowledge;
     }
 
     public function getKnowledgesCount($conditions)
@@ -144,7 +149,7 @@ class KnowledgeServiceImpl extends KernelAwareBaseService implements KnowledgeSe
     
     public function createKnowledge($field)
     {
-        $currentUser = $this->getCurrentUser();
+        $currentUser = $this->biz->getCurrentUser();
 
         $this->updateFollow($field);
         $tagId = $field['tagId'];
@@ -165,7 +170,7 @@ class KnowledgeServiceImpl extends KernelAwareBaseService implements KnowledgeSe
 
     public function updateFollow($filed)
     {
-        $currentUser = $this->getCurrentUser();
+        $currentUser = $this->biz->getCurrentUser();
         $topicId = $filed['topicId'];
         $userId = $currentUser['id'];
         $addNumber = 1;
