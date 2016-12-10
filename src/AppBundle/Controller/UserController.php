@@ -17,9 +17,6 @@ class UserController extends BaseController
         if (!$currentUser->isLogin()) {
            return $this->redirect($this->generateUrl("login"));
         }
-        if ($currentUser['id'] == $userId) {
-            $typeInfo = 'myself';
-        }
         $user = $this->getUserService()->getUser($userId);
         $hasfollowed = $this->getFollowService()->getFollowUserByUserIdAndObjectUserId($currentUser['id'],$userId);
 
@@ -62,7 +59,6 @@ class UserController extends BaseController
             'knowledges' => $knowledges,
             'paginator' => $paginator,
             'knowledgeTags' => $knowledgeTags,
-            'typeInfo' => isset($typeInfo) ? $typeInfo : ''
         ));
     }
 

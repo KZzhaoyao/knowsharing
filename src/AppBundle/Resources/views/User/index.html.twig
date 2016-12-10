@@ -16,7 +16,7 @@
           <li class="list-group-item">
             <b>积分</b> <a class="pull-right">{{ user.score }}</a>
           </li>
-          {% if typeInfo|default() != 'myself' %}
+          {% if app.user.id != user.id %}
             <li class="list-group-item" id="follow-user-btn" data-url="{{path('user_follow',{id:user.id})}}"　{% if hasfollowed is defined and hasfollowed == true %} style="display:none"{% endif %}>
             <b>关注</b> <a class="pull-right"><i class="fa fa-fw fa-heart-o"></i></a>
             </li>
