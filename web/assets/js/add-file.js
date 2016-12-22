@@ -13,7 +13,7 @@ $('#uploadModal').find('form').validate({
     submitHandler:function(){
         var url = $('#uploadModal').find('form').attr('action');
         var tag = $('[name = tag]').val();
-        var file = new FormData($('#addFileForm')[0]);
+        var file = new FormData($('#uploadModal').find('form')[0]);
         file.append('tag',tag);
         $.ajax({
             url:url,
