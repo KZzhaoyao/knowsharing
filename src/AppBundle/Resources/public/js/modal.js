@@ -8,7 +8,7 @@ $(document).ready(function(){
         var summary = $('[name = summary]').val();
         var topic = $('[name = topic]').val();
         var tag = $('[name = tag]').val();
-
+alert(tag);
         if (checkNull('title','标题') == false) {
             return ;
         }
