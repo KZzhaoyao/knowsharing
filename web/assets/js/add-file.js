@@ -1,8 +1,5 @@
-$('#docModal').find('form').validate({
+$('#uploadModal').find('form').validate({
     rules: {
-        'content': {
-            required: true
-        },
         'title': {
             required: true
         },
@@ -14,7 +11,7 @@ $('#docModal').find('form').validate({
         }
     },
     submitHandler:function(){
-        var url = $('#docModal').find('form').attr('action');
+        var url = $('#uploadModal').find('form').attr('action');
         var tag = $('[name = tag]').val();
         var file = new FormData($('#addFileForm')[0]);
         file.append('tag',tag);

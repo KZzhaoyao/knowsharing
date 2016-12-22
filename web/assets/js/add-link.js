@@ -1,3 +1,4 @@
+console.log($('#uploadModal').find('form'));
 $('#uploadModal').find('form').validate({
     rules: {
         'content': {
