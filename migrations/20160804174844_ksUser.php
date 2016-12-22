@@ -24,7 +24,7 @@ class KsUser extends Migration
         $table->addColumn('score', 'integer', array('default' => 0, 'unsigned' => true, 'comment' => '积分数'));
         $table->addColumn('knowledgeNum', 'integer', array('default' => 0, 'unsigned' => true, 'comment' => '知识分享数'));
         $table->addColumn('browseNum', 'integer', array('default' => 0, 'unsigned' => true, 'comment' => '学习数量'));
-        $table->addColumn('imageUrl', 'string', array('default' => 0, 'unsigned' => true, 'comment' => '图片路径'));  
+        $table->addColumn('imageUrl', 'string', array('default' => '', 'unsigned' => true, 'comment' => '图片路径'));  
         $container['db']->getSchemaManager()->createTable($table);
     }
 

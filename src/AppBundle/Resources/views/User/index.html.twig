@@ -3,7 +3,7 @@
 {% block left_header %}
     <div class="box box-primary">
       <div class="box-body box-profile">
-        <img class="profile-user-img img-responsive img-circle" src=" {% if user.imageUrl == 0 %}{{asset('bundles/app/img/default-user-image.png')}}{% else %}{{ asset(user.imageUrl) }}{% endif %}">
+        <img class="profile-user-img img-responsive img-circle" src=" {% if user.imageUrl == '' %}{{asset('bundles/app/img/default-user-image.png')}}{% else %}{{ asset(user.imageUrl) }}{% endif %}">
         <h3 class="profile-username text-center">昵称：{{ user.username }}</h3>
 
         <ul class="list-group list-group-unbordered" id="user">
