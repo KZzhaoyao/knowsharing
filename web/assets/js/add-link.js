@@ -1,4 +1,3 @@
-var url = $('#uploadModal').find('form').data('url');
 $('#uploadModal').find('form').validate({
     rules: {
         'content': {
@@ -12,10 +11,18 @@ $('#uploadModal').find('form').validate({
         },
         'tag': {
             required: true
-        },
+        }
+    },
+    submitHandler:function(){
+        var url = $('#uploadModal').find('form').attr('action');
+        var content = $('[name = content]').val();
+        var title = $('[name = title]').val();
+        var type = $('[name = type]').val();
+        var summary = $('[name = summary]').val();
+        var topic = $('[name = topic]').val();
+        var tag = $('[name = tag]').val();
+        $.post(url, {content:content,title:title,type:type,summary:summary,topic:topic,tag:tag}, function(data){
+            location.reload();
+        });
     }
 });
-
-$('button[data-toggle="submit"]').on('click',function(){
-    $($(this).data('target')).submit();
-})
