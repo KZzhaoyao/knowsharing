@@ -9,6 +9,7 @@ $(document).ready(function(){
                 parent.fadeTo('slow', 0.01, function(){
                     $(this).slideUp('slow', function(){
                         $(this).remove();
+                        location.reload();
                     });
                 });                
             }

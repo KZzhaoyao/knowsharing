@@ -4,6 +4,7 @@ $("#learn-btn").click(function(event) {
         if (data.status == 'success') {
             $btn.hide();
             $btn.parent().find('#finish-btn').show();
+            location.reload();
         } else if (data.status == 'false') {
             location.href = '/login';
         }
