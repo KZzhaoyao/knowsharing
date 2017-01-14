@@ -13,6 +13,20 @@ $('#uploadModal').find('form').validate({
             required: true
         }
     },
+    messages: {
+        'content': {
+            required: "链接不能为空"
+        },
+        'title': {
+            required: "标题不能为空"
+        },
+        'topic': {
+            required: "主题不能为空"
+        },
+        'tag': {
+            required: "标签不能为空"
+        }
+    },
     submitHandler:function(){
         var url = $('#uploadModal').find('form').attr('action');
         var content = $('[name = content]').val();

@@ -28,7 +28,7 @@ class UserController extends BaseController
         $paginator = new Paginator(
             $this->get('request'),
             $knowledgesCount,
-            20
+            10
         );
         $knowledges = $this->getKnowledgeService()->searchKnowledges(
             $conditions,
@@ -80,7 +80,7 @@ class UserController extends BaseController
         $paginator = new Paginator(
             $this->get('request'),
             $favoritesCount,
-            20
+            10
         );
         $knowledges = $this->getKnowledgeService()->searchKnowledgesByIds(
             $knowledgeIds,
@@ -123,7 +123,7 @@ class UserController extends BaseController
         $paginator = new Paginator(
             $this->get('request'),
             count($knowledgeIds),
-            20
+            10
         );
         $knowledges = $this->getKnowledgeService()->searchKnowledgesByIds(
             $knowledgeIds,
@@ -169,7 +169,7 @@ class UserController extends BaseController
             $paginator = new Paginator(
                 $this->get('request'),
                 count($objectIds),
-                20
+                10
             );
             $objects = $this->getUserService()->searchUsers(
                 $objectIds,
@@ -182,7 +182,7 @@ class UserController extends BaseController
             $paginator = new Paginator(
                 $this->get('request'),
                 count($objectIds),
-                20
+                10
             );
             $objects = $this->getTopicService()->searchTopicsByIds(
                 $objectIds,
@@ -216,7 +216,7 @@ class UserController extends BaseController
             $paginator = new Paginator(
                 $this->get('request'),
                 count($objectIds),
-                20
+                10
             );
             $objects = $this->getUserService()->searchUsers(
                 $objectIds,
@@ -228,7 +228,7 @@ class UserController extends BaseController
             $paginator = new Paginator(
                 $this->get('request'),
                 count($objectIds),
-                20
+                10
             );
             $objects = $this->getTopicService()->searchTopicsByIds(
                 $objectIds,
@@ -298,7 +298,7 @@ class UserController extends BaseController
         $paginator = new Paginator(
             $this->get('request'),
             $knowledgesCount,
-            20
+            10
         );
         
         $knowledges = $this->getKnowledgeService()->searchKnowledgesByIdsWithNoOrder(

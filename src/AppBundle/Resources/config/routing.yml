@@ -135,6 +135,10 @@ login:
 login_check:
   path:      /login_check
 
+login_check_user_name:
+  path:      /login/check/user/name
+  defaults:  { _controller: AppBundle:Auth:checkUserName }
+
 logout:
   path:      /logout
   defaults:  { _controller: AppBundle:Auth:logout }

@@ -34,7 +34,7 @@ class FollowController extends BaseController
                 'userIds' => $followUserIds,
                 'topicIds' => $followTopicIds
             )),
-            20
+            10
         );
         $followKnowledges = $this->getKnowledgeService()->searchFollowKnowledges(
             array(

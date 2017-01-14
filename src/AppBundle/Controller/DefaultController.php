@@ -20,7 +20,7 @@ class DefaultController extends BaseController
         $paginator = new Paginator(
             $this->get('request'),
             $this->getKnowledgeService()->getKnowledgesCount($conditions),
-            20
+            10
         );
         $knowledges = $this->getKnowledgeService()->searchKnowledges(
             $conditions,
@@ -133,7 +133,7 @@ class DefaultController extends BaseController
         $paginator = new Paginator(
             $request,
             $this->getTopicService()->getTopicsCount($condition),
-            20
+            10
         );
         $topics = $this->getTopicService()->searchTopics(
             $condition,
@@ -158,7 +158,7 @@ class DefaultController extends BaseController
         $paginator = new Paginator(
             $request,
             $this->getKnowledgeService()->getKnowledgesCount($condition),
-            20
+            10
         );
         $knowledges = $this->getKnowledgeService()->searchKnowledges(
             $condition,
@@ -195,7 +195,7 @@ class DefaultController extends BaseController
         $paginator = new Paginator(
             $request,
             $this->getUserService()->getUsersCount($condition),
-            20
+            10
         );
 
         $users = $this->getUserService()->findUsers(

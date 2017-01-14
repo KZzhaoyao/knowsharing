@@ -12,7 +12,7 @@
    <div class="box-footer box-comments">
     <div class="box-comment">
       <!-- User image -->
-      <img class="img-circle img-sm" src="{{ asset(user.imageUrl) }}" alt="User Image">
+      <img class="img-circle img-sm" src="{{ asset(users[comment.userId].imageUrl) }}" alt="User Image">
       <div class="comment-text">
             <span class="username">
               {{ users[comment.userId].username }}

@@ -23,7 +23,7 @@ class TopicController extends BaseController
         $paginator = new Paginator(
             $this->get('request'),
             $this->getTopicService()->getTopicsCount($conditions),
-            20
+            10
         );
         $topics = $this->getTopicService()->searchTopics(
             $conditions,
@@ -68,7 +68,7 @@ class TopicController extends BaseController
         $paginator = new Paginator(
             $request,
             $this->getKnowledgeService()->getKnowledgesCount($conditions),
-            20
+            10
         );
 
         $knowledges = $this->getKnowledgeService()->searchKnowledges(

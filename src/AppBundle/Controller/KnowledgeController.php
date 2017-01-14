@@ -33,7 +33,7 @@ class KnowledgeController extends BaseController
         $paginator = new Paginator(
             $this->get('request'),
             $this->getKnowledgeService()->getCommentsCount($conditions),
-            20
+            10
         );
         $comments = $this->getKnowledgeService()->searchComments(
             $conditions,

@@ -2,6 +2,7 @@ $(function(){
     $(".collect-btn").click(function(){
         var $btn = $(this);
         var img = $(this).data('img');
+        console.log(img);
         var li = '<li><a style="margin-left: 10px;"><img class="img-circle img-sm" src="'+img+'" alt="User Image"></a></li>';
         var $collectNum = $btn.find(".collect-num").html();
         $.post($btn.data('url'),function(data){

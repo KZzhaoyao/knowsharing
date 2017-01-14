@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -28,6 +29,17 @@ class AuthController extends BaseController
             )
         );
 
+    }
+
+    public function checkUserNameAction(Request $request)
+    {
+        $userName = $request->query->get('username');
+        $user = $this->getUserService()->getUserByUsername($userName);
+        if (empty($user)) {
+            return new JsonResponse(true);
+        } else {
+            return new JsonResponse(false);
+        }        
     }
 
     public function logoutAction(Request $request)

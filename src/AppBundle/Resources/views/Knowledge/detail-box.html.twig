@@ -50,7 +50,7 @@
       <div style="padding-left:19px;margin-top: 30px;">
         <a class="collect-btn" 
         {% if app.user.imageUrl is defined and app.user.imageUrl %}
-          data-img="{{ asset(user.imageUrl) }}"
+          data-img="{{ asset(app.user.imageUrl) }}"
         {% else %}
           data-img="{{asset('bundles/app/img/default-user-image.png')}}"
         {% endif %}
@@ -73,7 +73,7 @@
       <div style="padding-left:19px;margin-top: 15px;" id="likeMargin">
         <a class="like-btn" 
         {% if app.user.imageUrl is defined and app.user.imageUrl %}
-        data-img="{{ asset(user.imageUrl) }}"
+        data-img="{{ asset(app.user.imageUrl) }}"
         {% else %}
         data-img="{{asset('bundles/app/img/default-user-image.png')}}"
         {% endif %}
